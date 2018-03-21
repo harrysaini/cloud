@@ -127,7 +127,7 @@ var register = function(req, res) {
 		});
 
 		note = new Note();
-		note.title = 'Welcome to ng-notes';
+		note.title = 'Welcome to sha-notes';
 		note.content = '<p>Capture your ideas effortlessly with NGN. <span class="fr-emoticon fr-deletable fr-emoticon-img" style="background: url(https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/assets/svg/1f604.svg);">&nbsp;</span><span class="fr-emoticon fr-deletable fr-emoticon-img" style="background: url(https://cdnjs.cloudflare.com/ajax/libs/emojione/2.0.1/assets/svg/1f606.svg);">&nbsp;</span><br><br>To add a new note, click on the <strong>+</strong> icon below.</p>';
 		note.dateCreated = getCurrentDate();
 		note.labels = [];

@@ -137,7 +137,7 @@ app.controller('profileController', function($scope, $state, authentication, dat
 
 				swal({
 					title: '',
-					text: 'Your account was removed successfully. Thank you for trying out ng-notes.',
+					text: 'Your account was removed successfully. Thank you for trying out sha-notes.',
 					imageUrl: 'assets/images/animation-removed.gif',
 					confirmButtonText: 'OK'
 				},

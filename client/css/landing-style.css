@@ -498,9 +498,13 @@ body {
 /* Footer styles */
 .footer {
 	width: 100%;
-	padding: 35px 0 0 0;
-	background: #eee;
-	border-top: 1px solid #e0e0e0;
+    padding: 5px 0px;
+    background: #eee;
+    border-top: 1px solid #e0e0e0;
+}
+
+footer>p{
+	margin: 2px 0px;
 }
 
 .footer p {
