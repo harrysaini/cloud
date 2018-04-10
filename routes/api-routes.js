@@ -8,6 +8,7 @@ var Note = mongoose.model('Note');
 var Label = mongoose.model('Label');
 
 var router = express.Router();
+var uploadController = require('./attachmentUpload.controller');
 
 
 /* Set up auth */
@@ -482,6 +483,10 @@ var deleteNote = function(req, res) {
 };
 
 
+
+
+
+
 /* Configure API routes using the API functions */
 router.post('/register', register);
 router.post('/signin', signin);
@@ -499,6 +504,7 @@ router.get('/getnotes', auth, getNotes);
 router.post('/addnote', auth, addNote);
 router.put('/updatenote', auth, updateNote);
 router.delete('/deletenote/:id', auth, deleteNote);
+router.post('/upload',auth,uploadController.uploadAttachments);
 
 
 module.exports = router;

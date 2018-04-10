@@ -27,7 +27,22 @@ var noteSchema = mongoose.Schema({
 	},
 	author: {
 		type: String
+	},
+
+	attachments : {
+		typr : [String]
+	},
+
+	contributors : [	{
+		author : {
+			type: String
+		},
+		permission : {
+			type : String
+		}
 	}
+	]
+	
 });
 
 mongoose.model('Note', noteSchema);

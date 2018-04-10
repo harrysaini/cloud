@@ -60,75 +60,7 @@
 	<div class="modal fade-pop note-modal note-edit-modal" 
 	ng-repeat="note in notes | filter:{isArchived:false} | filter:{isTrashed:false} | searchFor:searchString" id="note-edit-modal-{{$index}}" role="dialog" edit-modals-loaded-directive>
 
-		<div class="modal-dialog">
-
-		<!-- Modal content -->
-		<div class="modal-content" ng-class="note.colorClass">
-
-			<!-- Edit Note Form -->
-			<form class="edit-note-form">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-
-				<!-- Modal header -->
-				<div class="modal-header">
-					<div class="form-group">
-						<label class="sr-only" for="title">Title: </label>
-						<textarea class="form-control input-title" rows="1" placeholder="Title" ng-model="note.title" maxlength="{{titleMaxLength}}"></textarea>
-					</div>
-				</div>
-
-				<!-- Modal body -->
-				<div class="modal-body">
-					<div class="form-group">
-						<label class="sr-only" for="content">Content: </label>
-						<textarea froala="froalaOptions" ng-model="note.content"></textarea>
-					</div>
-				</div>
-
-				<!-- Modal footer -->
-				<div class="modal-footer">
-					<!-- Labels -->
-					<div class="note-modal-labels">
-						<ul>
-							<li ng-repeat="label in note.labels">{{label}}</li>
-						</ul>
-					</div>
-
-					<!-- Date -->
-					<div class="note-modal-date">
-						<span title="Created {{note.dateCreated}}" class="opt-tooltip date">{{ note.dateCreated }}</span>
-					</div>
-
-					<!-- Options -->
-					<div class="note-modal-opt">
-						<a title="Speech input" class="opt-tooltip opt-icon-lg icon-mic speech-input" ng-click="speechInput($index)"></a>
-
-						<a title="Change color" class="opt-tooltip opt-icon-lg icon-palette colors-popup">
-							<ul>
-								<li ng-class="colorClass" class="color-btn" ng-repeat="colorClass in colorClasses" ng-click="setNoteColor(note, colorClass)"></li>
-							</ul>
-						</a>
-
-						<a title="Change labels" class="opt-tooltip opt-icon-lg icon-tag labels-popup">
-							<ul>
-								<li ng-repeat="label in labels">
-									<label ng-click="$event.stopPropagation();"><input type="checkbox" ng-checked="checkNoteLabel(note, label)" ng-click="changeNoteLabel(note, label)" /> {{label}}</label>
-								</li>
-							</ul>
-						</a>
-
-						<a title="Archive" class="opt-tooltip opt-icon-lg icon-archive" ng-click="archiveNoteViaModal(note, $index)" data-dismiss="modal"></a>
-
-						<a title="Delete" class="opt-tooltip opt-icon-lg icon-trash" ng-click="trashNoteViaModal(note, $index)" data-dismiss="modal"></a>
-
-						<a title="All done" class="opt-tooltip opt-icon-lg icon-check" data-dismiss="modal"></a>
-					</div>
-				</div>
-			</form> <!-- /.Edit Note Form -->
-
-		</div> <!-- /.Modal content -->
-
-		</div>
+		<div ng-include="'/views/notes-modal.view.html'"></div>
 
 	</div>
 	<!-- /.Note edit modals -->
